@@ -1,6 +1,6 @@
 # NEMO OData Express
 
-A lightweight app to serve a static OData feed for testing. Provides necessary response types and custom headers such as `OData-Version` so that programs like Power BI don't complain.
+A lightweight app to serve a static OData feed for testing. Provides necessary response types, custom headers such as `OData-Version`, and automatic `@odata.context` domain so that programs like Power BI don't complain.
 
 ## Development
 
