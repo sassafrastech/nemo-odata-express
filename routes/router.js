@@ -32,7 +32,7 @@ router.get('/([\$])metadata', function(req, res, next) {
   res.send(metadata.trim());
 });
 
-router.get('/Responses-00000000-0000-0000-0000-000000000000', function(req, res, next) {
+router.get('/Responses-*', function(req, res, next) {
   res.type('json');
   res.send({
     "@odata.context": fullUrl(req, { subpath: '$metadata', hash: '#Responses: Example' }).replace('/Responses-00000000-0000-0000-0000-000000000000', ''),
