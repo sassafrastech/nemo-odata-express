@@ -5,7 +5,7 @@ const express = require('express');
 const router = express.Router();
 
 const rootData = require('./rootData');
-const responseData = require('./responseData');
+const { responseData, formName } = require('./responseData');
 
 const metadata = fs.readFileSync(path.resolve(__dirname, 'metadata.xml'), 'utf8')
 
@@ -35,7 +35,7 @@ router.get('/([\$])metadata', function(req, res, next) {
 router.get('/Responses-*', function(req, res, next) {
   res.type('json');
   res.send({
-    "@odata.context": fullUrl(req, { subpath: '$metadata', hash: '#Responses: Example' }).replace('/Responses-00000000-0000-0000-0000-000000000000', ''),
+    "@odata.context": fullUrl(req, { subpath: '$metadata', hash: `#Responses: ${formName}` }).replace('/Responses-00000000-0000-0000-0000-000000000000', ''),
     "value": responseData,
   });
 });

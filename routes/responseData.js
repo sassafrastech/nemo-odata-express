@@ -1,4 +1,6 @@
-module.exports = [
+module.exports.formName = "Example";
+
+module.exports.responseData =  [
   {
     "FormName": "Example",
     "ResponseID": "11111111-1111-1111-1111-111111111111",
